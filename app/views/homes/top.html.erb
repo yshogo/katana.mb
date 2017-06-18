@@ -1,0 +1,9 @@
+<h1>Homes#top</h1>
+<p>
+  <% if logged_in? %>
+    <%= link_to 'ログアウト', logout_path %>
+  <% else %>
+    <%= link_to 'ツイッターでログイン', 'auth/twitter' %>
+  <% end %>
+
+</p>
