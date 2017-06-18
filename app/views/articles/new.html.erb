@@ -1,2 +1,20 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<p>ここは投稿ページです</p>
+
+<%= form_for @article do |f| %>
+
+    <p>
+      タイトル<%= f.text_field :title, id:'title' %>
+    </p>
+
+    <p>
+      <br>これは記事を書くとこ</br>
+      <%= f.text_area :article, :size=>"80x30", id:'markdown' %>
+    </p>
+
+    <p>
+      <%= f.submit 'save', class:'submit' %>
+    </p>
+
+<% end %>
+
+<p id="preview"></p>
