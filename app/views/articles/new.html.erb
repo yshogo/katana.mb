@@ -3,6 +3,11 @@
 <%= form_for @article do |f| %>
 
     <p>
+      <%= f.hidden_field :uid %>
+    </p>
+
+
+    <p>
       タイトル<%= f.text_field :title, id:'title' %>
     </p>
 
