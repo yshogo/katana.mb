@@ -1,11 +1,13 @@
 <h1>Users#show</h1>
 <p>　こんにちは <%= @user.nickname %> </p>
 
+<%= link_to '投稿する', new_articles_path(uid: @user.uid) %>
 
-<h2>
-  ここに投稿したものを一覧で表示させます
-</h2>
+<%= link_to 'ログアウト', logout_path %></br>
 
-<%= link_to '投稿する' , new_articles_path(uid:@user.uid) %>
 
-<%= link_to 'ログアウト' , logout_path %>
+<%= @article_list.each do |article| %>
+    <ul>
+      <il><%= article.title %></il>
+    </ul>
+<% end %>
