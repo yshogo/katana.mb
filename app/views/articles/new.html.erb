@@ -1,25 +1,25 @@
-<p>ここは投稿ページです</p>
-
 <%= form_for @article do |f| %>
 
     <p>
       <%= f.hidden_field :uid %>
     </p>
 
-
     <p>
-      タイトル<%= f.text_field :title, id:'title' %>
+      <%= f.text_field :title, id: 'title' %>
     </p>
 
-    <p>
-      <br>これは記事を書くとこ</br>
-      <%= f.text_area :article, :size=>"80x30", id:'markdown' %>
-    </p>
+    <div class="cell">
+      <p>
+        <%= f.text_area :article, id: 'markdown' %>
+      </p>
 
-    <p>
-      <%= f.submit 'save', class:'submit' %>
-    </p>
+      <p>
+        <%= f.submit 'save', class: 'submit' %>
+      </p>
 
-<% end %>
+      <% end %>
+    </div>
 
-<p id="preview"></p>
+<div class="cell">
+  <p id="preview"></p>
+</div>

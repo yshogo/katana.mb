@@ -1,13 +1,43 @@
-<h1>Users#show</h1>
-<p>　こんにちは <%= @user.nickname %> </p>
-
-<%= link_to '投稿する', new_articles_path(uid: @user.uid) %>
-
-<%= link_to 'ログアウト', logout_path %></br>
+<div id="container">
+  <div id="container_main">
+    <h1>Users#show</h1>
+    <p>　こんにちは <%= @user.nickname %> </p>
 
 
-<%= @article_list.each do |article| %>
-    <ul>
-      <il><%= article.title %></il>
-    </ul>
-<% end %>
+    <h2>
+      ここに投稿したものを一覧で表示させます
+    </h2>
+
+
+
+    <%= @article_list.each do |article| %>
+        <ul>
+          <il><%= article.title %></il>
+        </ul>
+    <% end %>
+  </div>
+
+  <div id="container_sidebar">
+    <div class="side_bar">
+
+      <h3>Notes</h3>
+
+      <ul class="sidebar_menu">
+        <li class="sidebar_menu">ノート一覧</li>
+      </ul>
+
+      <ul class="sidebar_menu">
+        <li class="sidebar_menu"><%= link_to '投稿する', new_articles_path(uid: @user.uid) %></li>
+      </ul>
+
+      <ul class="sidebar_menu">
+        <li class="sidebar_menu"><%= link_to 'ログアウト', logout_path %></li>
+      </ul>
+
+      <ul>
+        <li class="sidebar_menu">ヘルプ</li>
+      </ul>
+
+    </div>
+  </div>
+</div>
