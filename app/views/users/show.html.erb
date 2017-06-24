@@ -3,18 +3,10 @@
     <h1>Users#show</h1>
     <p>　こんにちは <%= @user.nickname %> </p>
 
-
-    <h2>
-      ここに投稿したものを一覧で表示させます
-    </h2>
-
-
-
-    <%= @article_list.each do |article| %>
-        <ul>
-          <il><%= article.title %></il>
-        </ul>
+    <% @article_list.each do |article| %>
+        <h2><%= link_to article.title ,edit_articles_path(id:article.id) %></h2>
     <% end %>
+
   </div>
 
   <div id="container_sidebar">

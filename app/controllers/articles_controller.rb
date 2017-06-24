@@ -7,6 +7,15 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(id:params[:id])
+
+    if @article == nil
+      flash[:notice] = 'エラーが発生しました'
+      redirect_to users_show_url
+    else
+      redirect_to new_articles_path
+    end
+
   end
 
   def create
