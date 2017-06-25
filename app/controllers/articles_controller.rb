@@ -1,18 +1,13 @@
 class ArticlesController < ApplicationController
   def new
-    @article = Article.new(uid:params[:uid])
+    @article = Article.new(uid: params[:uid])
   end
 
   def show
   end
 
   def edit
-    if params[:uid] == nil
-      @article = Article.find_by(id:params[:id])
-      print "こっちがよばれたy"
-    else
-      update(@article)
-    end
+    @article = Article.find(params[:id])
   end
 
   def create
@@ -23,18 +18,22 @@ class ArticlesController < ApplicationController
       redirect_to users_show_path
     else
       #保存失敗処理
-      redirect_to new_articles_path(uid:params[1])
+      redirect_to new_articles_path(uid: params[1])
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update_attributes(article_params)
+      # 更新に成功したときの処理
+    else
+      render 'edit'
     end
   end
 
   private
   def article_params
-    params.require(:article).permit(:uid, :title, :article)
+    params.require(:article).permit(:id, :uid, :title, :article)
   end
 
-  private
-  def update(article)
-
-    redirect_to root_path
-  end
 end
