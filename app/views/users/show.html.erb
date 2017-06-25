@@ -4,7 +4,7 @@
     <p>　こんにちは <%= @user.nickname %> </p>
 
     <% @article_list.each do |article| %>
-        <h2><%= link_to article.title ,edit_articles_path(id:article.id) %></h2>
+        <h2><%= link_to article.title ,edit_articles_path(id:article.id, uid:@user.uid) %></h2>
     <% end %>
 
   </div>

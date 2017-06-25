@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(id:params[:id])
+    @article = Article.where(id:params[:id]).where(uid:params[:uid])
 
     if @article == nil
       flash[:notice] = 'エラーが発生しました'
