@@ -1,2 +1,31 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<%= form_for articles_path do |f| %>
+
+    <p>
+      <%= f.hidden_field :uid, :value => @article.uid %>
+    </p>
+
+    <p>
+      <%= f.hidden_field :uid, :value => @article.id %>
+    </p>
+
+    <p>
+      <%= f.text_field :title, id: 'title', :value => @article.title %>
+    </p>
+
+    <div class="cell">
+      <p>
+        <%= f.text_area :article, id: 'markdown', :value => @article.article %>
+      </p>
+
+      <label>これはeditです</label>
+
+      <p>
+        <%= f.submit 'save'%>
+      </p>
+
+<% end %>
+</div>
+
+<div class="cell">
+  <p id="preview"></p>
+</div>

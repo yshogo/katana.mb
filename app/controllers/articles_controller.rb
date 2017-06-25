@@ -7,15 +7,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.where(id:params[:id]).where(uid:params[:uid])
-
-    if @article == nil
-      flash[:notice] = 'エラーが発生しました'
-      redirect_to users_show_url
+    if params[:uid] == nil
+      @article = Article.find_by(id:params[:id])
+      print "こっちがよばれたy"
     else
-      redirect_to new_articles_path
+      update(@article)
     end
-
   end
 
   def create
@@ -35,4 +32,9 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:uid, :title, :article)
   end
 
+  private
+  def update(article)
+
+    redirect_to root_path
+  end
 end
