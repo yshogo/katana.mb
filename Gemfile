@@ -14,6 +14,8 @@ gem 'rails-controller-testing'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'materialize-sass'
+gem 'marked-rails'
+
 
 
 
