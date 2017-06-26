@@ -1,4 +1,3 @@
-<div id="container">
   <div id="container_main">
 
     <h2>Notes!!</h2>
@@ -23,18 +22,3 @@
 
   </div>
 
-  <div id="container_sidebar">
-    <div class="side_bar">
-
-      <p> <%= @user.nickname %> </p>
-
-      <div class="collection">
-        <a href="#!" class="collection-item">ノート一覧</a>
-        <%= link_to '投稿する', new_articles_path(uid: @user.uid), class: 'collection-item active' %>
-        <%= link_to 'ログアウト', logout_path, class: 'collection-item' %>
-        <a href="#!" class="collection-item">ヘルプ</a>
-      </div>
-
-    </div>
-  </div>
-</div>

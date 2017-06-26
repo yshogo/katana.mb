@@ -1,27 +1,19 @@
-<%= form_for @article do |f| %>
+<div id="container_main">
+  <%= form_for @article do |f| %>
 
-    <p>
-      <%= f.hidden_field :uid %>
-    </p>
-
-    <p>
-      <%= f.text_field :title, id: 'title' %>
-    </p>
-
-    <div class="cell">
       <p>
+        <%= f.hidden_field :uid %>
+      </p>
+
+      <div class="cell">
+        <%= f.text_field :title, id: 'title' %>
         <%= f.text_area :article, id: 'markdown' %>
-      </p>
-
-      <p>
         <%= f.submit 'save', class: 'submit' %>
-      </p>
+      </div>
+  <% end %>
 
-      <% end %>
-    </div>
 
-<div class="cell">
-  <p id="preview"></p>
+  <div class="cell">
+    <p id="preview"></p>
+  </div>
 </div>
-
-<%= debug @article %>

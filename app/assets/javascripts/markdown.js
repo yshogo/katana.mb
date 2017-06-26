@@ -1,5 +1,7 @@
 $(function(){
 
+    $("#test").sideNav();
+
     $('#markdown').keyup(function () {
         var sync = function(){
 

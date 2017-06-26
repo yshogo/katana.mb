@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def new
     @article = Article.new(uid: params[:uid])
+    @user = User.find(session[:user_id])
   end
 
   def show

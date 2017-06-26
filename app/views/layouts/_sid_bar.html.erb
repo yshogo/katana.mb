@@ -1,16 +1,17 @@
-<div class="side_bar">
+<div id="container_sidebar">
+  <div class="side_bar">
 
-  <h3>Notes</h3>
+    <p> <%= @user.nickname %> </p>
 
-  <ul>
-    <li>ノート一覧</li>
-  </ul>
 
-  <ul>
-    <li>ヘルプ</li>
-  </ul>
+    <div class="collection">
+      <a href="#!" class="collection-item">ノート一覧</a>
+      <%= link_to 'ログアウト', logout_path, class: 'collection-item' %>
+      <a href="#!" class="collection-item">ヘルプ</a>
+    </div>
 
-  <ul>
-  </ul>
+  </div>
+
+  <%= link_to '投稿する', new_articles_path(uid: @user.uid), class: 'waves-effect waves-light btn' %>
 
 </div>
