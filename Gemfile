@@ -13,6 +13,8 @@ gem 'jbuilder',     '2.4.1'
 gem 'rails-controller-testing'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'materialize-sass'
+
 
 
 group :development, :test do

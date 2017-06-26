@@ -1,10 +1,24 @@
 <div id="container">
   <div id="container_main">
-    <h1>Users#show</h1>
-    <p>　こんにちは <%= @user.nickname %> </p>
+
+    <h2>Notes!!</h2>
 
     <% @article_list.each do |article| %>
-        <h2><%= link_to article.title , edit_articles_path(id:article.id) %> </h2>
+
+        <div class="row">
+          <div class="col s12 m7">
+            <div class="card">
+              <div class="card-content">
+                <h4><%= article.title %></h4>
+                <p><%= article.article %></p>
+              </div>
+              <div class="card-action">
+                <%= link_to '編集する', edit_articles_path(id: article.id) %>
+              </div>
+            </div>
+          </div>
+        </div>
+
     <% end %>
 
   </div>
@@ -12,23 +26,14 @@
   <div id="container_sidebar">
     <div class="side_bar">
 
-      <h3>Notes</h3>
+      <p> <%= @user.nickname %> </p>
 
-      <ul class="sidebar_menu">
-        <li class="sidebar_menu">ノート一覧</li>
-      </ul>
-
-      <ul class="sidebar_menu">
-        <li class="sidebar_menu"><%= link_to '投稿する', new_articles_path(uid: @user.uid) %></li>
-      </ul>
-
-      <ul class="sidebar_menu">
-        <li class="sidebar_menu"><%= link_to 'ログアウト', logout_path %></li>
-      </ul>
-
-      <ul>
-        <li class="sidebar_menu">ヘルプ</li>
-      </ul>
+      <div class="collection">
+        <a href="#!" class="collection-item">ノート一覧</a>
+        <%= link_to '投稿する', new_articles_path(uid: @user.uid), class: 'collection-item active' %>
+        <%= link_to 'ログアウト', logout_path, class: 'collection-item' %>
+        <a href="#!" class="collection-item">ヘルプ</a>
+      </div>
 
     </div>
   </div>
