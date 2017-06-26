@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def create
