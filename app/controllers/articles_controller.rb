@@ -23,9 +23,11 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update_attributes(article_params)
+    article = Article.new(article_params)
+    if Article.update(article.id,:title => article.title, :article => article.article)
       # 更新に成功したときの処理
+      user = User.find(session[:user_id])
+      redirect_to user
     else
       render 'edit'
     end
