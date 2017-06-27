@@ -12,7 +12,8 @@
                 <p><%= article.article %></p>
               </div>
               <div class="card-action">
-                <%= link_to '編集する', edit_articles_path(id: article.id) %>
+                <%= link_to 'Preview', edit_articles_path(id: article.id) %>
+                <%= link_to 'Edit', edit_articles_path(id: article.id) %>
               </div>
             </div>
           </div>
