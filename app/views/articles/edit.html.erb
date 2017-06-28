@@ -1,5 +1,12 @@
 <div id="container_main">
 
+  <script>
+      sync();
+      $('#markdown').keyup(function () {
+          sync();
+      });
+  </script>
+
   <%= form_for @article, :url => {:action => 'update'} do |f| %>
 
       <p>

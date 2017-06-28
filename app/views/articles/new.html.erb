@@ -5,6 +5,13 @@
         <%= f.hidden_field :uid %>
       </p>
 
+      <script>
+          sync();
+          $('#markdown').keyup(function () {
+              sync();
+          });
+      </script>
+
       <div class="cell">
         <div class="input-field">
           <%= f.text_field :title, id: 'title' %>
