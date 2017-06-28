@@ -6,8 +6,11 @@
       </p>
 
       <div class="cell">
-        <%= f.text_field :title, id: 'title' %>
-        <%= f.text_area :article, id: 'markdown' %>
+        <div class="input-field">
+          <%= f.text_field :title, id: 'title' %>
+          <label for="hoge">Title</label>
+        </div>
+          <%= f.text_area :article, id: 'markdown' %>
         <%= f.submit 'save', class: 'btn' %>
       </div>
   <% end %>

@@ -8,9 +8,12 @@
       </p>
 
       <div class="cell">
-        <%= f.text_field :title, id: 'title', :value => @article.title %>
+        <div class="input-field">
+          <%= f.text_field :title, id: 'title', :value => @article.title,class: 'validate' %>
+          <label for="hoge">Title</label>
+        </div>
         <%= f.text_area :article, id: 'markdown', :value => @article.article %>
-        <%= f.submit 'save', class: 'submit' %>
+        <%= f.submit 'save', class: 'btn' %>
       </div>
 
   <% end %>

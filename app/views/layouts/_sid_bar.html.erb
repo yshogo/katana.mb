@@ -1,20 +1,36 @@
-
 <% if @user != nil %>
-<div id="container_sidebar">
-  <div class="side_bar">
+    <div id="container_sidebar">
+      <div class="side_bar">
 
-    <p> <%= @user.nickname %> </p>
+        <p> <%= @user.nickname %> </p>
+
+        <p><%= link_to '投稿する', new_articles_path(uid: @user.uid), class: 'waves-effect waves-light btn' %></p>
+
+        <div id="search" >
+          <p>Search!!!</p>
+          <div class="input-field">
+            <input id="hoge" type="text" class="validate">
+            <label for="hoge">フリーワード</label>
+          </div>
+
+          <script>
+              $(function () {
+                  $('.datepicker').pickadate({
+                      selectMonths: true,
+                      selectYears: 15 // Creates a dropdown of 15 years to control year
+                  });
+              });
+          </script>
+          <p>Term</p>
+          <p>Start<input type="date" class="datepicker"></p>
+          <p>End<input type="date" class="datepicker"></p>
+
+          <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+
+        </div>
+      </div>
 
 
-    <div class="collection">
-      <a href="#!" class="collection-item">ノート一覧</a>
-      <%= link_to 'ログアウト', logout_path, class: 'collection-item' %>
-      <a href="#!" class="collection-item">ヘルプ</a>
+      <p><%= link_to 'ログアウト', logout_path, class: 'waves-effect waves-light btn' %></p>
     </div>
-
-  </div>
-
-  <%= link_to '投稿する', new_articles_path(uid: @user.uid), class: 'waves-effect waves-light btn' %>
-
-</div>
 <% end %>
