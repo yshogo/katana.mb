@@ -9,7 +9,7 @@ class Article < ApplicationRecord
 
   #記事の部分一致
   scope :article_like, -> (search_word) {
-    where('article like ?', "%#{search_word}%")
+     where('article like ?', "%#{search_word}%")
   }
 
   #日付検索
